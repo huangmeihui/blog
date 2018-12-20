@@ -11,7 +11,7 @@ draft: false
 # apt-get install git zsh
 ```
 
-2. 下载项目到本地（有点慢）
+2. 下载项目到本地
 ```
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
