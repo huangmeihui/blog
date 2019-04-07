@@ -1,16 +1,15 @@
 ---
-title: Oh-My-Zsh安装
+title: Debian 安装 Oh-My-Zsh
 date: 2018-01-10 15:05:06
 tags: ["工具"]
 draft: false
 ---
 
-
 1. 安装Git以及zsh
 ```
 # apt-get install git zsh
 ```
-
+<!--more-->
 2. 下载项目到本地
 ```
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -28,10 +27,10 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 5. 安装工作完毕，更换默认shell，需要重启会话
 ```
-# chsh -s /bin/zsh
+chsh -s /bin/zsh
 ```
 
-6. 重新打开一个终端，可能会发现乱码，原因是没有安装PowerLine的字体
+6. 重新打开一个终端，可能会发现乱码，原因是没有安装PowerLine的字体（不同的Linux发行版可能有不同的包，建议先搜索一下）
 ```
 # apt-get install fonts-powerline
 ```
@@ -39,4 +38,11 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 7. Theme更换,编辑.zshrc文件,找到ZSH_THEME这一行修改即可 （[内置主题列表](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)）
 ```
 vim ~/.zshrc
+## 举个栗子
+ZSH_THEME = "agnoster"
+```
+
+8. 手动更新
+```
+upgrade_oh_my_zsh
 ```
