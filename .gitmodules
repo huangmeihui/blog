@@ -3,4 +3,4 @@
 	url = https://github.com/olOwOlo/hugo-theme-even.git
 [submodule "public"]
 	path = public
-	url = git@github.com:refifth/refifth.github.io.git
+	url = git@github.com:omuumo/omuumo.github.io.git
