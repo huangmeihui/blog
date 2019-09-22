@@ -1,2 +1,1 @@
-# fifth
-Blog Hugo
+# Blog
