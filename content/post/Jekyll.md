@@ -51,7 +51,7 @@ title: Blogging Like a Hacker
 jekyll server
 ```
 如果你配置好的话终端应该会显示如下信息：
-```
+```bash
 Configuration file: /home/meiuh/Blog/_config.yml
             Source: /home/meiuh/Blog
        Destination: /home/meiuh/Blog/_site
@@ -62,7 +62,7 @@ Configuration file: /home/meiuh/Blog/_config.yml
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 ```
-然后打开你的浏览器，输入http：//127.0.0.1：4000/就可以看到你的博客啦。
+然后打开你的浏览器，输入 http://127.0.0.1:4000 就可以看到你的博客啦。
 
 这还是只是在本地访问你的博客，开头说过我们在Github上建立了一个Repo，现在就需要将我们的这个目录的所有文件，都上传到Github上的Repo下面，不出意外的话浏览器访问yourname.github.io就可以看到你的博客了。
 
