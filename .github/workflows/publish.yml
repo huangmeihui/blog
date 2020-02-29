@@ -22,11 +22,12 @@ jobs:
       run: |
         hugo -t even
     - name: Add & Commit
-      uses: EndBug/add-and-commit@v3.1.0
-      with: 
-        author_name: omuumo
-        author_email: huangmeihui@hotmail.com
-        cwd: ./public
+      run: |
+        git config --global user.name omuumo
+        git config --global user.email huangmeihui@hotmail.com
+        cd ./public
+        git add .
+        git commit -m "update"
     - name: Deploy Blog
       uses: ad-m/github-push-action@v0.5.0
       with:
