@@ -10,10 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Checkout Public
-      uses: actions/checkout@v2.0.0
+      uses: actions/checkout@master
       with:
         repository: omuumo/omuumo.github.io
         path: ./public
+        persist-credentials: false
+        fetch-depth: 0
     - uses: textbook/git-checkout-submodule-action@2.1.1
     - uses: peaceiris/actions-hugo@v2.4.6
     - name: Build Hugo Pages
@@ -25,12 +27,9 @@ jobs:
         author_name: omuumo
         author_email: huangmeihui@hotmail.com
         cwd: ./public
-    - name: Test
-      run: |
-        echo ${{ secrets.ACCESS_TOKEN }}
     - name: Deploy Blog
       uses: ad-m/github-push-action@v0.5.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.ACCESS_TOKEN }}
         repository: omuumo/omuumo.github.io
         directory: ./public
