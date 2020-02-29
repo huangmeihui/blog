@@ -1,0 +1,16 @@
+name: Publish Blog
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: textbook/git-checkout-submodule-action@2.1.1
+    - uses: srt32/hugo-action@v0.0.3
+    - name: Build Hugo Pages
+      run: |
+        hugo -t even
