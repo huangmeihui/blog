@@ -14,3 +14,9 @@ jobs:
     - name: Build Hugo Pages
       run: |
         hugo -t even
+    - name: Deploy Blog
+      uses: ad-m/github-push-action@v0.5.0
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        repository: omuumo/omuumo.github.io
+        directory: ./public
