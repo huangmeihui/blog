@@ -9,6 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Checkout Public
+      uses: actions/checkout@v2.0.0
+      with:
+        repository: omuumo/ommuumo.github.io
+        path: ./public
     - uses: textbook/git-checkout-submodule-action@2.1.1
     - uses: peaceiris/actions-hugo@v2.4.6
     - name: Build Hugo Pages
@@ -17,6 +22,6 @@ jobs:
     - name: Deploy Blog
       uses: ad-m/github-push-action@v0.5.0
       with:
-        github_token: 138c582170c9c651b939671e2d8bd9ca3ac5c44f
+        github_token: ${{ secrets.Access_Token }}
         repository: omuumo/omuumo.github.io
         directory: ./public
