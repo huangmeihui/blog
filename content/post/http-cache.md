@@ -7,15 +7,15 @@ draft: false
 
 ### 分类
 
-* 服务端缓存，又分为代理服务器缓存和反向代理服务器缓存
-* 客户端缓存，即浏览器缓存
+1. 服务端缓存，又分为代理服务器缓存和反向代理服务器缓存
+2. 客户端缓存，即浏览器缓存
 <!--more-->
 
 ### 浏览器的缓存
 
-* <b>Expires</b> HTTP/1.0中的实现，返回的到期时间是服务器的时间，这样一来如果浏览器和服务器时间相差特别大，缓存时间差别就很大，比如服务器和浏览器跨时区。这是弊端，所以HTTP/1.1中采用了Cache-Control: max-age=number代替
+<b>Expires</b> HTTP/1.0中的实现，返回的到期时间是服务器的时间，这样一来如果浏览器和服务器时间相差特别大，缓存时间差别就很大，比如服务器和浏览器跨时区。这是弊端，所以HTTP/1.1中采用了Cache-Control: max-age=number代替
 
-* <b>Cache-Control</b> 与Expires类似，都是指明当前资源的有效期，告诉浏览器直接读缓存还是从服务器重新拉取。Cache-Control拥有比Expires更多的选择。(如果同时存在Cache-Control与Expires，则Cache-Control优先级高)
+<b>Cache-Control</b> 与Expires类似，都是指明当前资源的有效期，告诉浏览器直接读缓存还是从服务器重新拉取。Cache-Control拥有比Expires更多的选择。(如果同时存在Cache-Control与Expires，则Cache-Control优先级高)
 
 以上二者都是强缓存，就是说若是命中缓存且缓存还有效就不发送请求，直接返回200(from cache)
 
