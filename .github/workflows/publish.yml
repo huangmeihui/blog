@@ -22,7 +22,7 @@ jobs:
         hugo-version: '0.53'
     - name: Build Hugo Pages
       run: |
-        hugo -t even
+        hugo
     - name: Add & Commit
       run: |
         git config --global user.name omuumo
