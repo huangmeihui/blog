@@ -13,9 +13,13 @@ draft: false
 
 ### 浏览器的缓存
 
-<b>Expires</b> HTTP/1.0中的实现，返回的到期时间是服务器的时间，这样一来如果浏览器和服务器时间相差特别大，缓存时间差别就很大，比如服务器和浏览器跨时区。这是弊端，所以HTTP/1.1中采用了Cache-Control: max-age=number代替
+<b>Expires</b> HTTP/1.0中的实现，返回的到期时间是服务器的时间，
+这样一来如果浏览器和服务器时间相差特别大，缓存时间差别就很大，比如服务器和浏览器跨时区。
+这是弊端，所以HTTP/1.1中采用了Cache-Control: max-age=number代替
 
-<b>Cache-Control</b> 与Expires类似，都是指明当前资源的有效期，告诉浏览器直接读缓存还是从服务器重新拉取。Cache-Control拥有比Expires更多的选择。(如果同时存在Cache-Control与Expires，则Cache-Control优先级高)
+<b>Cache-Control</b> 与Expires类似，都是指明当前资源的有效期，
+告诉浏览器直接读缓存还是从服务器重新拉取。Cache-Control拥有比Expires更多的选择。
+(如果同时存在Cache-Control与Expires，则Cache-Control优先级高)
 
 以上二者都是强缓存，就是说若是命中缓存且缓存还有效就不发送请求，直接返回200(from cache)
 
@@ -32,7 +36,12 @@ Cache-Control的值可以是以下几种：
 
 ### Last-Modified/If-Modified-Since和Etag/If-None-Match
 
-这二者都要配合Cache-Control使用，当资源过期时(例如Cache-Control使用了max-age声明)，若发现资源带有Last-Modified或Etag声明，则向服务器请求时带上If-Modified-Since或If-None-Match。If-Modified-Since表示请求时间，服务器收到后与资源最后的修改时间做对比，若发现这个请求时间比最后修改时间新，则说明资源自上次缓存后没有修改过，服务器直接返回304，反之则需返回新的资源。而Etag则是服务器生成并且告知浏览器的当前资源在服务器的唯一标识，If-None-Match标识Etag的值，服务器收到后可以进行比对，相同则返回304，不同则返回整个资源。
+这二者都要配合Cache-Control使用，当资源过期时(例如Cache-Control使用了max-age声明)，
+若发现资源带有Last-Modified或Etag声明，则向服务器请求时带上If-Modified-Since或If-None-Match。
+If-Modified-Since表示请求时间，服务器收到后与资源最后的修改时间做对比，
+若发现这个请求时间比最后修改时间新，则说明资源自上次缓存后没有修改过，服务器直接返回304，
+反之则需返回新的资源。而Etag则是服务器生成并且告知浏览器的当前资源在服务器的唯一标识，
+If-None-Match标识Etag的值，服务器收到后可以进行比对，相同则返回304，不同则返回整个资源。
 
 ### 用户行为与协商缓存
 

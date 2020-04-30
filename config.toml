@@ -1,6 +1,6 @@
 baseurl = "https://moc.omuumo.com/"
 title = "Comunication"
-author = "omuumo"
+author = "meihui"
 canonifyurls = true
 languagecode = "en"
 theme = "black-and-light"
@@ -9,5 +9,5 @@ pygmentsstyle       = "bw"
 pygmentscodefences  = true
 
 [params]
-  sitename = "omuumo's blog"
+  sitename = "Comunication"
   disableWebFonts = false
