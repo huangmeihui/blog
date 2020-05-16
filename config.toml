@@ -1,4 +1,4 @@
-baseurl = "https://moc.omuumo.com/"
+baseurl = "https://clopend.space/"
 title = "Comunication"
 author = "meihui"
 canonifyurls = true
@@ -9,5 +9,5 @@ pygmentsstyle       = "bw"
 pygmentscodefences  = true
 
 [params]
-  sitename = "Comunication"
+  sitename = "Clopend"
   disableWebFonts = false
